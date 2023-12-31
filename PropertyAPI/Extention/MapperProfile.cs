@@ -13,6 +13,8 @@ namespace PropertyAPI.Extention
             CreateMap<UserDTO,User>();
             CreateMap<Country,CountryDTO>();
             CreateMap<CountryDTO,Country>();
+            CreateMap<State,StateDTO>();
+            CreateMap<StateDTO, State>();
 
         }
 

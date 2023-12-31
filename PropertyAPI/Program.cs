@@ -19,6 +19,8 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("PropertyDealerDb
 // Add services to the container.
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 

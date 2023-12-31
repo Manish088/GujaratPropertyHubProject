@@ -7,7 +7,7 @@ namespace PropertyAPI.Repository
 {
     public class CountryRepository : ICountryRepository
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+           private readonly ApplicationDbContext _applicationDbContext;
         public CountryRepository(ApplicationDbContext _applicationDbContext)
         {
             this._applicationDbContext = _applicationDbContext;
