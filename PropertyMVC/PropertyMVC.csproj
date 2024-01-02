@@ -19,4 +19,8 @@
     <ProjectReference Include="..\PropertyEntity\PropertyEntity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\NewFolder\" />
+  </ItemGroup>
+
 </Project>

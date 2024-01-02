@@ -1,3 +1,4 @@
+using PropertyMVC.HTTPAPI.AccountHTTPAPI;
 using PropertyMVC.HTTPAPI.CountryHTTPAPI;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICountryServiceAPI, CountryServiceAPI>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
