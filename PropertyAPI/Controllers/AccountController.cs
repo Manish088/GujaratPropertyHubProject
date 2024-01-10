@@ -31,7 +31,8 @@ namespace PropertyAPI.Controllers
             var (result, user) = await _userService.AuthenticationUser(email, password);
             if (result)
             {
-                var tokenString = GenerateJSONWebToken(user);
+                var tokenString = 0;
+                //var tokenString = GenerateJSONWebToken(user);
                 return Ok(tokenString);
             }
             return Ok("Faild Login");
@@ -44,7 +45,8 @@ namespace PropertyAPI.Controllers
             await _userService.CreateUser(UserDto);
             return Ok();
         }
-        private string GenerateJSONWebToken(User userInfo)
+        /*[NonAction]
+        public string GenerateJSONWebToken(User userInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -61,6 +63,6 @@ namespace PropertyAPI.Controllers
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
+        }*/
     }
 }

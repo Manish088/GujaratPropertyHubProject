@@ -1,0 +1,84 @@
+﻿
+
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">Country Name</label>
+            <div class="col-md-6">
+                <select class="form-control" id="ddlCountry"></select><br />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-4 control-label">State Name</label>
+            <div class="col-md-6">
+                <select class="form-control" id="ddlState"></select>
+                <br />
+            </div>
+        </div>
+        <br />
+       @*  <div class="form-group">
+            <label class="col-md-4 control-label">City Name</label>
+            <div class="col-md-6">
+                <select class="form-control" id="ddlCity"></select>
+            </div>
+        </div> *@
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var ddlCountry = $('#ddlCountry');
+        ddlCountry.append($("<option></option>").val('').html('Please Select Country'));
+
+        
+        $.ajax({
+            url: 'https://localhost:7036/Country/GetAllCountryDetails',
+            debugger
+            type: 'GET',
+            dataType: 'json',
+            success: function (d) {
+                $.each(d, function (i, country) {
+                    debugger
+                    ddlCountry.append($("<option></option>").val(country.CountryId).html(country.CountryName));
+                });
+            },
+            error: function () {
+                alert('Error!');
+            }
+        });
+
+        
+        $("#ddlCountry").change(function () {
+            var countryId = parseInt($(this).val());
+
+            if (!isNaN(countryId)) {
+                var ddlState = $('#ddlState');
+                ddlState.empty();
+                ddlState.append($("<option></option>").val('').html('Please wait ...'));
+
+                $.ajax({
+                    url: 'https://localhost:7036/State/GetAllStateDetails', // Corrected URL
+                    type: 'GET',
+                    dataType: 'json',
+                    data: { CountryId: countryId },
+                    success: function (d) {
+                        ddlState.empty(); // Clear the please wait
+                        ddlState.append($("<option></option>").val('').html('Select State'));
+                        $.each(d, function (i, state) {
+                            ddlState.append($("<option></option>").val(state.StateId).html(state.StateName));
+                        });
+                    },
+                    error: function () {
+                        alert('Error!');
+                    }
+                });
+            }
+        });
+    });
+</script>

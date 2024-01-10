@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.33711.374
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyEntity", "PropertyEntity\PropertyEntity.csproj", "{EBF83244-2BC1-4B7A-B42B-88E11A2F4973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyEntity", "PropertyEntity\PropertyEntity.csproj", "{EBF83244-2BC1-4B7A-B42B-88E11A2F4973}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyAPI", "PropertyAPI\PropertyAPI.csproj", "{0F1AE4F5-D239-47D1-AF73-62B118F97188}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyAPI", "PropertyAPI\PropertyAPI.csproj", "{0F1AE4F5-D239-47D1-AF73-62B118F97188}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyMVC", "PropertyMVC\PropertyMVC.csproj", "{73E2903D-8529-45F1-9035-1B80AD13134D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyMVC", "PropertyMVC\PropertyMVC.csproj", "{73E2903D-8529-45F1-9035-1B80AD13134D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

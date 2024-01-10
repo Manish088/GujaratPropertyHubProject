@@ -13,12 +13,18 @@ namespace PropertyEntity
         [Key]
         public int AreaOfCityId { get; set; }
         public string AreaOfCityName { get; set; }
-        public City city { get; set; }
-        [ForeignKey("CityId")]
+
+        // Navigation property for the relationship with City
+        public City City { get; set; }
+
+        // Foreign key property
+        [ForeignKey("City")]
         public int CityId { get; set; }
+
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public string ModifyBy { get; set; }
         public DateTime ModifyDate { get; set; }
     }
+
 }

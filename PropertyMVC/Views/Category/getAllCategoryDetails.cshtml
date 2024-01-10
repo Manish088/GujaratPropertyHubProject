@@ -1,0 +1,135 @@
+﻿@model IEnumerable<PropertyEntity.Category>
+
+@{
+    ViewData["Title"] = "GetAllCountryDetails";
+    //Layout = null;
+}
+@* 
+<h1>GetAllCountryDetails</h1>
+
+<p>
+    <a asp-action="CreateCategory">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifyBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifyDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifyBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifyDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "CreateCategory", new {  categoryId=item.CategoryId  }) |
+                    @* @Html.ActionLink("Details", "Details", new {  id=item.CategoryId }) | 
+                    @Html.ActionLink("Delete", "DeleteCategory", new {  categoryId=item.CategoryId  })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+
+@* <section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">DataTable with default features</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>SrNo.</th>
+                                    <th>Category Name</th>
+                                    
+                                    <th>Action</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.Index
+                                        </td>
+
+
+                                        <td>@item.Data.CategoryName</td>
+                                        
+
+                                        <td>
+                                            @* <a href="@Url.Action("AddOperationMaster", "OperationMaster", new { strOperationId =item.Data.OperationId  })" class="btn btn-primary btn-sm" title="Edit">
+                                        <i class="fas fa-edit"></i>Edit
+                                        </a>*@
+
+                                            @*<a href="@Url.Action("OperationMasterSoftDelete", "OperationMaster", new { strOperationId = item.Data.OperationId })"
+                                        class="btn btn-danger btn-sm" title="Delete"
+                                        onclick="return confirm('Are you sure you want to delete this Collection Details?');">
+                                        <i class="fas fa-trash"></i>Delete
+                                        </a>
+
+
+
+                                        </td>
+
+
+
+                                    </tr>
+                                }
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section> *@

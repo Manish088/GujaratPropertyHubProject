@@ -10,6 +10,7 @@ namespace PropertyMVC.Controllers
         {
             this._countryServiceAPI = _countryServiceAPI;
         }
+        [HttpGet]
         public async Task<IActionResult> GetAllCountryDetails()
         {
             var GetCountryList= await _countryServiceAPI.GetAllCountryServiceApi();

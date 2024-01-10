@@ -37,7 +37,7 @@ namespace PropertyAPI.Controllers
             }
         }
         [HttpDelete("deleteCountry/{countryId}")]
-        public async Task<ActionResult> DeleteCountry(int countryId)
+        public async Task<IActionResult> DeleteCountry(int countryId)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace PropertyAPI.Controllers
             }
         }
         [HttpPost("insertCountry")]
-        public async Task<ActionResult> InsertCountry([FromBody] CountryDTO country)
+        public async Task<IActionResult> InsertCountry([FromBody] CountryDTO country)
         {
             try
             {
@@ -86,7 +86,7 @@ namespace PropertyAPI.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-        [HttpPut("updateCountry/{countryId}")]
+        [HttpPut("updateCountry")]
         public async Task<ActionResult> UpdateCountry([FromBody] CountryDTO updatedCountry)
         {
             try

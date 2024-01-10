@@ -1,5 +1,7 @@
 using PropertyMVC.HTTPAPI.AccountHTTPAPI;
+using PropertyMVC.HTTPAPI.CategoryHTTPAPI;
 using PropertyMVC.HTTPAPI.CountryHTTPAPI;
+using PropertyMVC.HTTPAPI.StateHTTPAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICountryServiceAPI, CountryServiceAPI>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IStateService, StateService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

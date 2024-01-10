@@ -27,8 +27,8 @@ namespace PropertyAPI.Repository
 
         public async Task<IEnumerable<Country>> GetAllCountry()
         {
-            var countryList =  _applicationDbContext.country.ToList();
-            _applicationDbContext.SaveChanges();
+            var countryList =await  _applicationDbContext.country.ToListAsync();
+            
             return countryList;
         }
 

@@ -20,3 +20,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.main-sidebar {
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}

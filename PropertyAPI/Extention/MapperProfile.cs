@@ -15,6 +15,8 @@ namespace PropertyAPI.Extention
             CreateMap<CountryDTO,Country>();
             CreateMap<State,StateDTO>();
             CreateMap<StateDTO, State>();
+            CreateMap<Category, CategoryDTO>();
+            CreateMap<CategoryDTO, Category>();
 
         }
 
